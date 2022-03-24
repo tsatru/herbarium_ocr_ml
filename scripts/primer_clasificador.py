@@ -3,12 +3,13 @@ import psycopg2
 from sklearn import svm
 import numpy as np
 
-def exp_range(start, end, e):  #se define la función exp_range que recibe: start, end y 'e'
-    retval = []  #crea una lista llamada retval
-    while start < end:   #mientras start sea menor a end 
-        retval.append(start) #agrega un elemento a start
-        start *= e   #multiplica start * e y asigna el resultado a "e"
-    return retval #devuelve la lista retval hasta que la condición se vuelve falsa 
+"""Esta función crea una lista para agregar el elemento start y devuelve el resultado de su operación """
+def exp_range(start, end, e):  
+    retval = []  
+    while start < end:   
+        retval.append(start) 
+        start *= e   
+    return retval 
 
 
 
@@ -16,8 +17,8 @@ folds = 4         # el grupo de datos se divide en 4 subgrupos
 perc_data = 0.3  # se define el porcentaje de la muestra de los datos
 cache_size = 500  # SVM kernel cache
 
-user = "root"
-passwd = "tAn1a.ccud"
+user = "usuario"
+passwd = "password"
 
 db = MySQLdb.connect(host="localhost",
                      user=user,
@@ -37,7 +38,7 @@ sql =  """
        AND scaled_word_y0 >= 0 AND scaled_word_y0 <= 1;
        """  
       
-my_engine='mysql+mysqldb://root:tAn1a.ccud@localhost/mlproject?charset=utf8mb4'        
+my_engine='mysql+mysqldb://usuario:password@localhost/mlproject?charset=utf8mb4'        
 #se almacena el resultado de la query como dataframe       
 df = pd.read_sql_query(sql, my_engine)
 
