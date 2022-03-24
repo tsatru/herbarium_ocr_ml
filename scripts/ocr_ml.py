@@ -22,8 +22,8 @@ from sqlalchemy import create_engine
 #from sql import *
 #from config import config
 
-user_pg = "tania"
-passwd_pg = "tania.ccud"
+user_pg = "usuario"
+passwd_pg = "password"
 db_pg = "mlproject"
 
 
