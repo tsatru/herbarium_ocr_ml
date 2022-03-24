@@ -5,8 +5,8 @@ import MySQLdb
 import pandas as pd
 
 
-user_pg = "tania"
-passwd_pg = "tania.ccud"
+user_pg = "usuario"
+passwd_pg = "password"
 
 
 
